@@ -8,10 +8,10 @@ function InventoryDetail(props) {
     <React.Fragment>
       <h1>Item Detail</h1>
       <h3>{item.names}</h3>
-      <p><em>Origin:{props.origin}</em></p>
-      <p>Price: {props.price}</p>
-      <p>Roast: {props.roast}</p>
-      <p>Remaining Stock: {props.stock}</p>
+      <p><em>Origin:{item.origin}</em></p>
+      <p>Price: {item.price}</p>
+      <p>Roast: {item.roast}</p>
+      <p>Remaining Stock: {item.stock}</p>
       <button onClick={props.onClickingEdit}>Update Item</button>
       <button onClick={() => onClickingDelete(item.id)}>Remove Item</button>
       <hr />
