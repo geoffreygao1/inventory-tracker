@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function Ticket(props) {
   return (
     <React.Fragment>
-      <div onClick={() => props.whenTicketClicked(props.id)}>
+      <div onClick={() => props.whenItemClicked(props.id)}>
         <h3>{props.names}</h3>
         <p><em>Origin:{props.origin}</em></p>
         <p>Price: {props.price}</p>
