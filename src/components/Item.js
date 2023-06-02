@@ -9,7 +9,7 @@ function Ticket(props) {
         <p><em>Origin:{props.origin}</em></p>
         <p>Price: {props.price}</p>
         <p>Roast: {props.roast}</p>
-        <p>Remaining Stock: {(props.stock === 0) ? 'Out of Stock' : (props.stock <= 10) ? props.stock + ' (Almost Empty!)' : props.stock}</p>
+        <p>Remaining Stock: {(props.stock === 0) ? 'Out of Stock' : (props.stock <= 10) ? props.stock + ' (Almost Empty)' : props.stock}</p>
       </div>
       <button onClick={() => props.sellItem(props.id)}>Sell Item</button>
       <hr />
