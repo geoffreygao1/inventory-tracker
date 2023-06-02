@@ -10,8 +10,9 @@ function Ticket(props) {
         <p>Price: {props.price}</p>
         <p>Roast: {props.roast}</p>
         <p>Remaining Stock: {props.stock}</p>
-        <hr />
       </div>
+      <button onClick={() => props.sellItem(props.id)}>Sell Item</button>
+      <hr />
     </React.Fragment>
   );
 }
@@ -23,7 +24,8 @@ Ticket.propTypes = {
   roast: PropTypes.string,
   stock: PropTypes.number,
   id: PropTypes.string,
-  whenTicketClicked: PropTypes.func
+  whenTicketClicked: PropTypes.func,
+  sellItem: PropTypes.func
 };
 
 export default Ticket;

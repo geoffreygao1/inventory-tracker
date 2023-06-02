@@ -6,6 +6,8 @@ function InventoryList(props) {
 
   return (
     <React.Fragment>
+      <h2>Current Inventory</h2>
+      <p><em>Click the item to edit/delete</em></p>
       <hr />
       {props.inventoryList.map((item) =>
         <Item
@@ -16,7 +18,8 @@ function InventoryList(props) {
           roast={item.roast}
           stock={item.stock}
           id={item.id}
-          key={item.id} />
+          key={item.id}
+          sellItem={props.reduceInventoryCount} />
       )}
     </React.Fragment>
   );
@@ -24,7 +27,8 @@ function InventoryList(props) {
 
 InventoryList.propTypes = {
   inventoryList: PropTypes.array,
-  onItemSelection: PropTypes.func
+  onItemSelection: PropTypes.func,
+  reduceInventoryCount: PropTypes.func
 };
 
 export default InventoryList;

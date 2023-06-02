@@ -5,30 +5,30 @@ function ReusableForm(props) {
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
-        <input
+        Item Name: <input
           type='text'
           name='names'
-          placeholder='Item Name' />
+          placeholder='e.g. Epicodus Blend' defaultValue={props.itemToEdit ? props.itemToEdit.names : null} />
         <br></br>
-        <input
+        Origin: <input
           type='text'
           name='origin'
-          placeholder='Item Origin' />
+          placeholder='e.g. Columbia' defaultValue={props.itemToEdit ? props.itemToEdit.origin : null} />
         <br></br>
-        <input
+        Price: <input
           type='text'
           name='price'
-          placeholder='Item Price' />
+          placeholder='e.g. $4.99' defaultValue={props.itemToEdit ? props.itemToEdit.price : null} />
         <br></br>
-        <input
+        Roast: <input
           type='text'
           name='roast'
-          placeholder='Item Roast' />
+          placeholder='e.g. Light Roast' defaultValue={props.itemToEdit ? props.itemToEdit.roast : null} />
         <br></br>
-        <input
+        Stock: <input
           type='number'
           name='stock'
-          placeholder='Item Stock' />
+          placeholder='e.g. 130' defaultValue={props.itemToEdit ? props.itemToEdit.stock : null} />
         <br></br>
         <button type='submit'>{props.buttonText}</button>
       </form>
@@ -38,7 +38,8 @@ function ReusableForm(props) {
 
 ReusableForm.propTypes = {
   formSubmissionHandler: PropTypes.func,
-  buttonText: PropTypes.string
+  buttonText: PropTypes.string,
+  itemToEdit: PropTypes.object
 };
 
 export default ReusableForm;

@@ -45,6 +45,21 @@ class InventoryControl extends React.Component {
     this.setState({ selectedItem: selectedItem });
   }
 
+  handleReduceStock = (id) => {
+    const selectedItem = this.state.mainInventoryList.filter(item => item.id === id)[0];
+    const reducedStockItem = { ...selectedItem, stock: (selectedItem.stock === 0) ? 0 : selectedItem.stock - 1 };
+    console.log(reducedStockItem);
+    this.setState({ selectedItem: selectedItem });
+    const editedMainInventoryList = this.state.mainInventoryList
+      .filter(item => item.id !== reducedStockItem.id)
+      .concat(reducedStockItem);
+    this.setState({
+      mainInventoryList: editedMainInventoryList,
+      editing: false,
+      selectedItem: null
+    });
+  }
+
   handleDeletingItem = (id) => {
     const newMainInventoryList = this.state.mainInventoryList.filter(item => item.id !== id);
     this.setState({
@@ -87,13 +102,14 @@ class InventoryControl extends React.Component {
       currentlyVisibleState = <NewInventoryForm onNewInventoryCreation={this.handleAddingNewItemToList} />;
       buttonText = "Return to Item List";
     } else {
-      currentlyVisibleState = <InventoryList inventoryList={this.state.mainInventoryList} onItemSelection={this.handleChangingSelectedItem} />;
+      currentlyVisibleState = <InventoryList inventoryList={this.state.mainInventoryList} onItemSelection={this.handleChangingSelectedItem} reduceInventoryCount={this.handleReduceStock} />;
       buttonText = "Add Item";
     }
 
     return (
       <React.Fragment>
         {currentlyVisibleState}
+        <br />
         <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
