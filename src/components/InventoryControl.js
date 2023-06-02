@@ -48,7 +48,6 @@ class InventoryControl extends React.Component {
   handleReduceStock = (id) => {
     const selectedItem = this.state.mainInventoryList.filter(item => item.id === id)[0];
     const reducedStockItem = { ...selectedItem, stock: (selectedItem.stock === 0) ? 0 : selectedItem.stock - 1 };
-    console.log(reducedStockItem);
     this.setState({ selectedItem: selectedItem });
     const editedMainInventoryList = this.state.mainInventoryList
       .filter(item => item.id !== reducedStockItem.id)

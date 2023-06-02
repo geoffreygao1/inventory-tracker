@@ -12,7 +12,7 @@ function InventoryDetail(props) {
       <p><em>Origin:{item.origin}</em></p>
       <p>Price: {item.price}</p>
       <p>Roast: {item.roast}</p>
-      <p>Remaining Stock: {item.stock}</p>
+      <p>Remaining Stock: {(item.stock === 0) ? 'Out of Stock' : (item.stock <= 10) ? item.stock + ' (Almost Empty)' : item.stock}</p>
       <button onClick={props.onClickingEdit}>Update Item</button>
       <button onClick={() => onClickingDelete(item.id)}>Remove Item</button>
       <hr />
