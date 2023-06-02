@@ -1,6 +1,21 @@
-# Getting Started with Create React App
+# _Inventory Tracker_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### By _Geoffrey Gao_
+
+#### _An application that helps to track inventory_
+
+## Technologies Used
+
+* _Javascript_
+* _React.js_
+
+## Description
+
+_This application contains a web page that allows a user to track current inventory of the shop. The application includes functionality to create, update, and delete inventory. Additionally, the application includes functionality to sell items in the inventory one by one. The project demonstrates solid understanding of the new concepts from the React Fundamentals coursework including Javascript and React.js._
+
+## Component Diagram Summary
+
+![component diagram for inventory project](https://github.com/geoffreygao1/inventory-tracker/blob/main/src/img/ComponentDiagram.png)
 
 ## Available Scripts
 
@@ -68,3 +83,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Known Bugs
+
+* _Sell Item button doesn't maintain order_
+
+## License
+
+_MIT_
+
+Copyright (c) _2023_ _Geoffrey Gao_
