@@ -12,7 +12,7 @@ function NewInventoryForm(props) {
       origin: event.target.origin.value,
       price: event.target.price.value,
       roast: event.target.roast.value,
-      stock: event.target.stock.value,
+      stock: parseInt(event.target.stock.value),
       id: v4()
     });
   }
